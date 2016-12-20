@@ -1,0 +1,90 @@
+﻿@model IEnumerable<GuestBook.Models.Tamu>
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Index";
+}
+<body style="background-color:#222222;color:white">
+    
+    <div style="text-align:center">
+        <a href="/Tamu/Index"> <img src="~/Content/Image/nandoyuri.png" style="width:500px;height:250px" /></a> 
+    </div>
+    
+        <table style="position:relative;left:870px;top:55px">
+            <tr>
+                <td align="left">
+                    @using (Html.BeginForm("Search", "Tamu", FormMethod.Get, new { @style = "display:inline" }))
+                    {
+
+
+                        <input type="text" class="form-control" name="txtSearch" placeholder="Cari nama" />
+
+                        <button type="submit" class="btn btn-gold"><span class="glyphicon glyphicon-search"></span></button>
+
+
+                    }
+                </td>
+
+            </tr>
+        </table>
+    
+
+    <br />
+    <input type="button" value="Tambah Tamu" onclick="location.href='@Url.Action("Create", "Tamu")'" class="btn btn-gold" />
+    <br /><br />
+ 
+    <table class="table">
+
+        <tr style="color:#AD974F">
+            <th>
+               User Name
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                Ucapan
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.firstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lastname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pesan)
+                </td>
+                @if (item.username == User.Identity.GetUserName())
+                {
+
+                    <td>
+                        <input type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "Tamu")?id=' + @item.Id" class="btn btn-warning" />
+                        <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Tamu")?id=' + @item.Id" class="btn btn-danger" />
+                    </td>
+                }
+                <td>
+                    
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>

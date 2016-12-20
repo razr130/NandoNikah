@@ -1,0 +1,85 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.form-control {
+  display: inline;
+  width: auto;
+  height: 34px;
+ 
+  font-size: 14px;
+  
+  color: #555555;
+  
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.btn-gold {
+  color: #ffffff;
+  background-color: #AD974F;
+  border-color: ##9F8A42;
+}
+
+.btn-gold:hover,
+.btn-gold:focus,
+.btn-gold:active,
+.btn-gold.active,
+.open .dropdown-toggle.btn-gold {
+  color: #ffffff;
+  background-color: #EEDD82;
+  border-color: #AD974F;
+}
+
+.btn-gold:active,
+.btn-gold.active,
+.open .dropdown-toggle.btn-gold {
+  background-image: none;
+}
+
+.btn-gold.disabled,
+.btn-gold[disabled],
+fieldset[disabled] .btn-gold,
+.btn-gold.disabled:hover,
+.btn-gold[disabled]:hover,
+fieldset[disabled] .btn-gold:hover,
+.btn-gold.disabled:focus,
+.btn-gold[disabled]:focus,
+fieldset[disabled] .btn-gold:focus,
+.btn-gold.disabled:active,
+.btn-gold[disabled]:active,
+fieldset[disabled] .btn-gold:active,
+.btn-gold.disabled.active,
+.btn-gold[disabled].active,
+fieldset[disabled] .btn-gold.active {
+  background-color: #EEDD82;
+  border-color: #AD974F;
+}
+
+
