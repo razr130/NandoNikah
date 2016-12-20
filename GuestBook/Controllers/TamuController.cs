@@ -73,6 +73,7 @@ namespace GuestBook.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public ActionResult Edit(int id)
         {
             using (TamuDAL services = new TamuDAL())
@@ -84,6 +85,7 @@ namespace GuestBook.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+       
         public ActionResult Edit(Tamu tamu)
         {
             using (TamuDAL services = new TamuDAL())
@@ -95,7 +97,7 @@ namespace GuestBook.Controllers
             return RedirectToAction("Index");
         }
 
-
+        [Authorize]
         public ActionResult Delete(int id)
         {
             using (TamuDAL service = new TamuDAL())

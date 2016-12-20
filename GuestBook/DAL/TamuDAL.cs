@@ -76,6 +76,7 @@ namespace GuestBook.DAL
             }
         }
 
+        
         public void Edit(Tamu obj)
         {
             var model = GetDataById(obj.Id);

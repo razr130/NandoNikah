@@ -455,7 +455,7 @@ namespace GuestBook.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Tamu");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
